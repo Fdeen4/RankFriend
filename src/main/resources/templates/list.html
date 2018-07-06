@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h2 align="center">Friend Rank List</h2>
+    <a th:href="@{/rank}"><h4>Add Another Friend</h4></a>
+    <table class="table table-bordered">
+        <thead>
+        <tr class="success">
+            <th>Image</th>
+            <th>Rank Good</th>
+            <th>Number Of Good Ranks</th>
+            <th>Rank Bad</th>
+            <th>Number of Bad Ranks</th>
+
+
+
+
+        </tr>
+        </thead>
+        <tbody>
+<!--        <tr class="info" th:each="eachjob:${job}">
+     <td class="list-group-item image-wrapper"  th:if="${eachjob.url} != null">
+                <a th:href="${eachjob.image}" target="_blank" ><img height="150px;" width="150px;" id="post-image" th:src="@{${eachjob.url}}"/></a>
+            </td>
+            <td> <a th:href="@{/redirect/{id}(id=${eachjob.id})}" >Tasty</a> </td>
+            <td th:text="${eachjob.getLikeCount()}"> </td>
+            <td> <a th:href="@{/redirectdis/{id}(id=${eachjob.id})}">Nasty</a> </td>
+            <td th:text="${eachjob.getDislikeCount()}"> </td>
+        </tr>-->
+
+
+        </tbody>
+    </table>
+
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

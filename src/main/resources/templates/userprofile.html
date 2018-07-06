@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/Stylesheet.css">
+
+</head>
+<body>
+<br/>
+<h1 align="center">User Profile</h1>
+<table>
+    <tr>
+
+        <th>Name</th>
+        <th>Email</th>
+        <th>Username</th>
+        <th>Password</th>
+    </tr>
+    <tbody>
+    <tr th:each="eachjob:${job}">
+        <td th:text="${eachjob.Name}"></td>
+        <td th:text="${eachjob.Email}"></td>
+        <td th:text="${eachjob.Username}"></td>
+        <td th:text="${eachjob.Password}"></td>
+        <td>
+            <a th:href="@{/update/{id}(id=${eachjob.id})}">Update</a> -
+            <a th:href="@{/detail/{id}(id=${eachjob.id})}">Details</a> -
+            <a th:href="@{/delete/{id}(id=${eachjob.id})}">Delete</a>
+
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+<a href="/rank">Rank a Friend</a>
+</body>
+</html>

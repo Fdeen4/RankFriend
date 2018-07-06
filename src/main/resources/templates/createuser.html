@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Eater|Shadows+Into+Light" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Tajawal|Tangerine" rel="stylesheet">
+    <link rel="stylesheet" href="/css/Stylesheet.css">
+</head>
+<body>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Home </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="createuser.html">Create User <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Gallery.html">Search Results</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Lists
+                    </a>
+                    <div class="dropdown-menu bg-dark " aria-labelledby="navbarDropdownMenuLink ">
+                        <a class="dropdown-item text-light " href="jobform.html">JOB FORM</a>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!--<div sec:authorize="Anyone">-->
+<div class="container">
+    <h1 align="center">Create User</h1>
+    <form action="#"
+          th:action="@{/process}"
+          th:object="${job}"
+          method="post">
+        <div class="form-group">
+            <input type="hidden" th:field="*{id}" class="form-control">
+        </div>
+        <div class="form-group">
+            Name:<input type="text" th:field="*{name}" class="form-control">
+            <span th:if="${#fields.hasErrors('name')}"
+                  th:errors="*{name}"></span>
+        </div>
+        Email:<input type="text" th:field="*{email}" class="form-control">
+        <span th:if="${#fields.hasErrors('email')}"
+              th:errors="*{email}"></span><br />
+        Username:<input type="text" th:field="*{username}" class="form-control">
+        <span th:if="${#fields.hasErrors('username')}"
+              th:errors="*{username}"></span>
+        Password:<input type="text" th:field="*{password}" class="form-control">
+        <span th:if="${#fields.hasErrors('password')}"
+              th:errors="*{password}"></span>
+
+
+      <!--  Username:<textarea rows="3" th:field="*{requirements}" ></textarea>
+        <span th:if="${#fields.hasErrors('requirements')}" th:errors="*{requirements}"></span><br />
+        Password:<textarea row="3" th:field="*{skills}" /></textarea>
+        <span th:if="${#fields.hasErrors('skills')}" th:errors="*{skills}"></span><br />
+        <br />-->
+        <button type= "submit" class="btn btn-outline-primary" align="center"> Create Account!</button>
+
+    </form>
+</div>
+<!--</div>-->
+</body>
+</html>

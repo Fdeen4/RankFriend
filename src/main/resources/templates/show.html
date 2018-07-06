@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/list">Account Info</a><br  />
+Name:<span th:text="${job.name}" ></span><br />
+Email :<span th:text="${job.email}" ></span>
+Username :<span th:text="${job.username}" ></span><br />
+<a th:href="@{/delete/{id}(id=${job.id})}">Delete this account</a>
+
+</body>
+</html>
